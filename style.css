@@ -1,0 +1,95 @@
+/* ========================= */
+/* Universal Reset & Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ========================= */
+/* Body & Page Background */
+body {
+    display: flex;                  /* center calculator */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;                  /* full viewport height */
+    background: linear-gradient(
+        90deg,
+        rgba(2,0,36,1) 0%,
+        rgba(9,9,121,1) 35%,
+        rgba(0,212,255,1) 100%
+    );
+}
+
+/* ========================= */
+/* Calculator Container */
+.calculator {
+    background-color: rgba(0,0,0,0.8); /* semi-transparent black */
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ========================= */
+/* Display */
+#display {
+    background-color: rgba(255,255,255,0.1);
+    color: #ffffff;
+    text-align: right;
+    padding: 15px;
+    font-size: 2rem;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+/* ========================= */
+/* Buttons Grid */
+.buttons {
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+}
+
+/* ========================= */
+/* Buttons Styling */
+.numbers, .operators {
+    background-color: rgba(255,255,255,0.1);
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;               /* prevent text selection */
+    transition: background 0.2s, transform 0.1s;
+}
+
+/* Hover effect */
+.numbers:hover, .operators:hover {
+    background-color: rgba(255,255,255,0.3);
+    transform: scale(1.05);
+}
+
+/* Operators Color Accent */
+.operators {
+    background-color: #00d4ff;      /* bright cyan */
+    color: #020024;                 /* dark text */
+}
+
+.operators:hover {
+    background-color: #00bcd4;
+}
+
+/* Zero button wider (optional) */
+#1, #2, #3, #4, #5, #6, #7, #8, #9, #addition, #subtract, #multiply, #divide, #answer, #clear {
+    grid-column: auto;
+}
+
+/* Example: make "0" wider if you add it later */
+
+.operators.equal { grid-column: span 2; } 
