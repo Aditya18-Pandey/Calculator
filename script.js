@@ -23,7 +23,7 @@ function canAddDot(current){
 }
 
 //function for Handling Input
-function handleInput{
+function handleInput(){
     const value = e.target.dataset.value;
     //clear
     if(value === "AC"){
