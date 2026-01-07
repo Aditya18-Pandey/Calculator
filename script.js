@@ -67,7 +67,6 @@ function handleInput(value){
 }
 //Event delegation 
 buttons.addEventListener("click", function(e){
-    const value = e.target.dataset.value;
     if(!e.target.dataset.value) return;
     handleInput(e.target.dataset.value);  
 });
