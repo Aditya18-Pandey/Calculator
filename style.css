@@ -86,9 +86,7 @@ body {
 }
 
 /* Zero button wider (optional) */
-#1, #2, #3, #4, #5, #6, #7, #8, #9, #addition, #subtract, #multiply, #divide, #answer, #clear {
-    grid-column: auto;
-}
+
 
 /* Example: make "0" wider if you add it later */
 

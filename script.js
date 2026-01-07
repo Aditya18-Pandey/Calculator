@@ -23,8 +23,7 @@ function canAddDot(current){
 }
 
 //function for Handling Input
-function handleInput(){
-    const value = e.target.dataset.value;
+function handleInput(value){
     //clear
     if(value === "AC"){
         currentInput = "";
@@ -68,39 +67,45 @@ function handleInput(){
 }
 //Event delegation 
 buttons.addEventListener("click", function(e){
+    const value = e.target.dataset.value;
     if(!e.target.dataset.value) return;
     handleInput(e.target.dataset.value);  
 });
 window.addEventListener("keydown", function(e){
     const key = e.key;
 
-    //for normal keys(A-Z a-z)
-    if(!isNaN){
+    // numbers
+    if (key >= "0" && key <= "9") {
         handleInput(key);
         return;
     }
-    //for operators
-    if(operators.includes(key)){
+
+    // operators
+    if (operators.includes(key)) {
         handleInput(key);
         return;
     }
-    //for dot operator
-    if(key === "."){
+
+    // dot
+    if (key === ".") {
         handleInput(".");
         return;
     }
-    //for backspace
-    if(key === "BACKSPACE"){
+
+    // backspace
+    if (key === "Backspace") {
         handleInput("DE");
         return;
     }
-    //for clearing
-    if(key === "ESCAPE" || key ==="DELETE"){
+
+    // clear
+    if (key === "Escape" || key === "Delete") {
         handleInput("AC");
         return;
     }
-    //for equal
-    if(key === "="){
+
+    // evaluate
+    if (key === "Enter" || key === "=") {
         e.preventDefault();
         handleInput("=");
         return;
